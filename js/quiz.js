@@ -3,6 +3,7 @@ var lock=true;
 var nitaku="０";
 var sentaku="０";
 function nitakuFunction(event) {
+    console.log("これ出て動いたら終わり");
     const sentakukaitou=document.getElementById('sentakukaitou');
     // クリックされたボタンのデータ属性からidを取得
     
