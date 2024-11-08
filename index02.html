@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>Quiz×Reversi | 2⁷-4</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <link rel="stylesheet" href="css/main02.css" />
+</head>
+
+<body>
+  <audio id="btn_audio">
+    <source src="./music/SE/click.mp3" type="audio/mp3">
+  </audio>
+
+  <div id="titleScene">
+    <img src="./images/title.png" style="width: 70%;">
+    <span id="startButton">
+      <a href="./game.html">
+        <img src="./images/startButton.png" alt="START" style="width: 50%;">
+      </a>
+    </span>
+    <span id="settingButton">
+      <img src="./images/settingButton.png" alt="設定" style="width: 50%;">
+    </span>
+  </div>
+
+  <img id="m1" src="./images/Background/moyou1.png" class="moyo">
+  <img id="m2" src="./images/Background/moyou2.png" class="moyo">
+  <img id="m3" src="./images/Background/moyou3.png" class="moyo">
+  <img id="m4" src="./images/Background/moyou4.png" class="moyo">   
+  <img id="m5-1" src="./images/Background/moyou5.png" class="moyo">
+  <img id="m5-2" src="./images/Background/moyou5.png" class="moyo">
+  <img id="m6-1" src="./images/Background/moyou6.png" class="moyo">   
+  <img id="m6-2" src="./images/Background/moyou6.png" class="moyo">
+  <img id="m6-3" src="./images/Background/moyou6.png" class="moyo">
+
+  <div id="settingScene" style="display: none;">
+    <h2>設定</h2>
+    <button id="back_titleSceneButton">タイトルに戻る</button>
+    <button id="back_titleSceneButton1">難易度設定</button>
+    <button id="back_titleSceneButton2">やさしい</button>
+    <button id="back_titleSceneButton3">普通</button>
+    <button id="back_titleSceneButton4">難しい</button>
+    <h3>音量</h3>
+    <div class="bgmSwitch">
+      <div class="bgmSwitch_toggle"></div>
+    </div>
+    <h4>BGM・SE<input type="range" id="volumebar" min="0" max="100" step="1">
+    <p><span id="volume-value"></span>%</p>
+    </h4>
+  </div>
+  <div id="gameScene" style="display: none;">
+    <audio id="BGM" loop>
+      <source src="./music/komizuwomitsumete.mp3" type="audio/mp3">
+    </audio>
+    <div id="stage" class="stage"></div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* main.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Zen Maru Gothic", serif;
+  overflow-x: hidden;
+  background-image: url(../images/Background/background.png);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 4em;
+  color: #fff;
+}
+
+#titleScene {
+  background-image: url(../images/Background/background_white.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20vh 0;
+}
+
+.moyo {
+  position: absolute;
+  width: 16vw;
+}
+
+#m1 {
+  top: 10vh;
+  left: 10vw;
+}
+
+#m2 {
+  top: 15vh;
+  right: 10vw;
+}
+
+#m3 {
+  top: 30vh;
+  left: 20vw;
+}
+
+#m4 {
+  top: 40vh;
+  right: 15vw;
+  transform: rotate(-20deg);
+}
+
+#m5-1 {
+  bottom: 30vh;
+  left: 5vw;
+}
+
+#m5-2 {
+  bottom: 30vh;
+  right: 5vw;
+}
+
+#m6-1 {
+  bottom: 10vh;
+  left: 10vw;
+}
+
+#m6-2 {
+  bottom: 15vh;
+  right: 10vw;
+  transform: rotate(-180deg);
+}
+
+#m6-3 {
+  bottom: 5vh;
+  left: 30vw;
+}

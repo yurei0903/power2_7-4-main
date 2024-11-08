@@ -1,0 +1,183 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+  margin: 0;
+  max-height: 100%;
+  padding: 0;
+  background-image: url(../images/Background/background.png);
+  background-size: 300%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+#titleScene {
+  background-image: url(../images/Background/background_white.png);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+button {
+  padding: 10px 20px;
+  margin: 6px;
+  border: none;
+  border-radius: 30px; /* ボタンの丸み */
+  background-color: #ffb0f3;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* カーソルを合わせたときに大きくなる */
+  background-color: #bf8ac0; /* ホバー時の色変更（任意） */
+}
+
+button:active {
+  transform: scale(0.95); /* クリック時に縮む */
+}
+
+
+h1 {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 4em;
+  margin: 20%, -50%;
+  line-height: 0px;
+  -webkit-text-stroke: 2px #EB6182;
+  color: #fff; 
+}
+
+.notfound {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 0.9em;
+  margin-bottom: 5%;
+  line-height: 0px;
+  -webkit-text-stroke: 0.5px #EB6182;
+  color: #fff; 
+}
+
+#settingScene {
+  background-color: #fff;
+  width: 75%;
+  background-repeat: no-repeat;
+  margin: 10px auto;
+  background-position: center;
+  padding: 15%;
+  
+}
+
+
+.bgmSwitch {
+  width: 4em;
+  height: 2em;
+  background-color: lightgray;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+  transition: background-color .2s ease-in-out;
+}
+
+.bgmSwitch.active {
+  background-color: #f5d24b;
+}
+
+.bgmSwitch_toggle {
+  width: 1.8em;
+  height: 1.8em;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0.1em;
+  margin: auto;
+  box-shadow: 0.1em 0.1em 0.2em #b7b7b7, -0.1em -0.1em -0.2em #cecece;
+  transition: left .3s ease-in-out;
+}
+
+.bgmSwitch_toggle.active {
+  left: 2.1em;
+}
+
+
+
+.stage {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 60px;
+  width: 320px;
+  height: 300px;
+}
+
+.square {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: solid black;
+  border-width: 0 4px 4px 0;
+  cursor: pointer;;
+}
+
+.square:nth-child(-n + 6) {
+  border-width: 4px 4px 4px 0;
+  height: 54px;
+}
+
+.square:nth-child(6n + 1) {
+  border-width: 0 4px 4px 4px;
+  width: 54px;
+}
+
+.square:first-child {
+  border-width: 4px;
+  width: 54px;
+  height: 54px;
+}
+.stone {
+  position: absolute;
+  top: 2px;
+  bottom: 0;
+  left: 2px;
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+}
+
+.stone[data-state="0"] {
+  display: none;
+}
+
+.stone[data-state="1"] {
+  background-color: black;
+}
+
+.stone[data-state="2"] {
+  background-color: white;
+}
+
+#square-template {
+  display: none;
+}
+
+.moyou1 {
+  height: 10%;
+}
