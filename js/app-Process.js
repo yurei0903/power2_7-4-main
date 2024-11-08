@@ -31,7 +31,7 @@ appProcess.tryEnd = async function() {
     await appProcessEffect.execEnd();   // 終了時演出実行
     revCore.init();     // 盤面初期化
     this.start();       // 開始
-    return false;//falseに変えた
+    return true;
 };
 
 // 実行2：パス（配置可能マスがないならパス）
