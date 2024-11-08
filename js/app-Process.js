@@ -4,7 +4,7 @@ const appProcess = {};
 // 開始
 appProcess.start = function() {
     appClick.addButton('Start', () => {
-        appProcessEffect.execStart();   // 開始時演出実行
+        app_process_effect.execStart();   // 開始時演出実行
         appClick.addBoard();    // 盤面追加
     });
 };
@@ -13,7 +13,7 @@ appProcess.start = function() {
 appProcess.put = async function(x, y) {
     revCore.putToken(x, y); // 石置き処理
     revCore.next();         // 次へ
-    await appProcessEffect.execPut();   // 石配置時演出実行
+    await app_process_effect.execPut();   // 石配置時演出実行
     this.update();    // 更新
 };
 
@@ -28,7 +28,7 @@ appProcess.update = async function() {
 // 実行1：終了
 appProcess.tryEnd = async function() {
     if (! revCore.data.isEnd) return false;
-    await appProcessEffect.execEnd();   // 終了時演出実行
+    await app_process_effect.execEnd();   // 終了時演出実行
     revCore.init();     // 盤面初期化
     this.start();       // 開始
     return true;
@@ -37,7 +37,7 @@ appProcess.tryEnd = async function() {
 // 実行2：パス（配置可能マスがないならパス）
 appProcess.tryPass = async function() {
     if (revCore.data.activeSquares.length > 0) return false;
-    await appProcessEffect.execPass();  // パス時演出実行
+    await app_process_effect.execPass();  // パス時演出実行
     revCore.next(); // 次へ
     this.update();  // 更新
     return true;
