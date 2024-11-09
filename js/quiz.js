@@ -45,13 +45,16 @@ function loadQuestion(questionData) {
         quizElement.style.display = 'block'; // 要素を表示
 
         if (selectedQuestion.問題形式 === "一問一答") {
-            questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
             questionArea.innerHTML +='<input type="text" id="kaitou" placeholder="ここに文字を入力" />'
         }
         else if(selectedQuestion.問題形式 === "二択"){
+
             questionArea.innerHTML += '<button class="nitaku" data-id="１">1番</button>';
             questionArea.innerHTML += '<button class="nitaku" data-id="２">2番</button>';
-            questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
+            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const nitaku = document.querySelectorAll(".nitaku");
             nitaku.forEach(button => {
                 button.addEventListener('click', nitakuFunction);
@@ -61,7 +64,8 @@ function loadQuestion(questionData) {
             questionArea.innerHTML += '<button class="sentaku" data-id="１">1番</button>';
             questionArea.innerHTML += '<button class="sentaku" data-id="２">2番</button>';
             questionArea.innerHTML += '<button class="sentaku" data-id="３">3番</button>';
-            questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
+            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const sentaku = document.querySelectorAll(".sentaku");
             sentaku.forEach(button => {
                 button.addEventListener('click', sentakuFunction);

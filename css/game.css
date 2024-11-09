@@ -45,6 +45,48 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 影を追加 (オプション) */
     white-space: [pre-line];
 }
+.button a {
+    background: #f37d7d;
+    border-radius: 9999px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 80px;
+    padding: 10px 25px;
+    font-family: "Noto Sans Japanese";
+    color: #333333;
+    line-height: 1.8;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    font-weight: 150;
+}
+.button a:hover {
+    background: #333333;
+    color: #FFF;
+}
+.button a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #333333;
+    border-right: 3px solid #333333;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.button a:hover:after {
+    border-color: #FFF;
+}
+body{
+    vertical-align:middle; 
+    padding: 50px 0;
+    text-align: center;
+}
 
 
 
