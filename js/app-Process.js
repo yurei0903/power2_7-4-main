@@ -37,6 +37,7 @@ appProcess.tryEnd = async function() {
 // 実行2：パス（配置可能マスがないならパス）
 appProcess.tryPass = async function() {
     if (revCore.data.activeSquares.length > 0) return false;
+    console.log("pass")
     await appProcessEffect.execPass();  // パス時演出実行
     revCore.next(); // 次へ
     this.update();  // 更新
