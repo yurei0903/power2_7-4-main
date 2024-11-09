@@ -20,6 +20,7 @@ function sentakuFunction(event) {
 }
 async function quizdasu() {
     try {
+        console.log("quizdasu");
         if(lock){
         const response = await fetch('JSON/questions.json');
         const questionData = await response.json();
@@ -35,6 +36,7 @@ async function quizdasu() {
 // 問題をロードする関数
 function loadQuestion(questionData) {
     return new Promise((resolve) => {
+        console.log("loadQuesution");
         const randomIndex = Math.floor(Math.random() * questionData.length);
         const selectedQuestion = questionData[randomIndex];
         console.log(selectedQuestion.答え)
@@ -91,6 +93,7 @@ function loadQuestion(questionData) {
 
 // 答えを確認する関数
 function checkAnswer(correctAnswer, format) {
+    console.log("checkAnswer");
     const  seikai= document.getElementById('seikai');
     const  matigai= document.getElementById('matigai');
     if (format === "一問一答") {
