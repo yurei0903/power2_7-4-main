@@ -106,7 +106,7 @@ function checkAnswer(correctAnswer, format) {
         } else {
             matigai.currentTime = 0; // 音声の再生位置をリセット
             matigai.play(); // 音を再生
-            alert("残念、不正解です。回答"+correctAnswer);
+            alert("残念、不正解です。正解は..."+correctAnswer);
             hantei=false;
         }
 
@@ -125,7 +125,7 @@ function checkAnswer(correctAnswer, format) {
             matigai.currentTime = 0; // 音声の再生位置をリセット
             matigai.play(); // 音を再生
             hantei=false;
-            alert("残念、不正解です。回答"+correctAnswer);
+            alert("残念、不正解です。正解は..."+correctAnswer);
             
         }
         
@@ -144,7 +144,7 @@ function checkAnswer(correctAnswer, format) {
             matigai.currentTime = 0; // 音声の再生位置をリセット
             matigai.play(); // 音を再生
             hantei=false;
-            alert("残念、不正解です。回答"+correctAnswer);
+            alert("残念、不正解です。正解は..."+correctAnswer);
             
         }
     }
