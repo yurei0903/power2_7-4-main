@@ -19,15 +19,21 @@ appClick.addBoard =  async function () {
     this.isLock = false;    // ロック解除
     if (gameClick.holder['board']) return;  // 既にあれば追加しない
         gameClick.add(appView.cobj.canvas, 'board', async (eX, eY) => {
-         if (this.isLock) return;    // ロック時は飛ばす
+        if (this.isLock) {console.log("C");return;}
+             // ロック時は飛ばす
         const pos = appLayout.pixelToBoard(eX, eY);  // マス位置を計算
-        if (pos === null) return;   // 盤面外は飛ばす
+        if (pos === null) {console.log("B");
+        return;   // 盤面外は飛ばす
+        }
+
         // 石置き可能なら、石を置く
         if (skip){
             skip=false;
+            console.log("D");
         const {board, player} = revCore.data;
         if (revMid.isActive(board, pos.x, pos.y, player)) {
             if(await quizdasu()){
+            console.log("quiz")
             this.isLock = false;     // ロック
             appProcess.put(pos.x, pos.y); // 石の配置
             skip=true;
@@ -39,9 +45,10 @@ appClick.addBoard =  async function () {
             skip=true;
             const quizElement = document.getElementById('quiz');
             quizElement.style.display = 'none'; // 要素を表示
+            console.log("A");
         }
     }
+    skip=true;
     }
     });
-
 };
