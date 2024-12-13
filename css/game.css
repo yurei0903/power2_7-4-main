@@ -31,7 +31,15 @@ body {
 }
 .question-area{
     white-space: pre-line; /* 改行を反映するためのスタイル */
-    
+}
+.Q_name{
+    font-size: 35px;
+}
+.Q_main{
+    font-size: 25px;
+}
+#sentakukaitou{
+    font-size: 20px;
 }
 #quiz {
     margin-right: 20px; /* 右側に余白を追加 */
