@@ -95,33 +95,48 @@ body{
     padding: 50px 0;
     text-align: center;
 }
-.nitaku{
+/* .nitaku{
     margin: 15px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+
     background: #6fa1ff;
     color: #FFF;
     text-decoration: none;
     text-align: center;
-
-}
+} */
 .sentaku{
     margin: 15px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
     background: #6fa1ff;
     color: #FFF;
     text-decoration: none;
     text-align: center;
-
+    
 }
-
+.nitaku,
+a.nitaku {
+  color: #fff;
+  background-color: #eb6100;
+}
+.nitaku:hover,
+a.nitaku:hover {
+  color: #fff;
+  background: #f56500;
+}
+.sentaku,
+a.sentaku {
+  color: #fff;
+  background-color: #eb6100;
+}
+.sentaku:hover,
+a.sentaku:hover {
+  color: #fff;
+  background: #f56500;
+}
 
