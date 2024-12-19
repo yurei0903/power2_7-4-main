@@ -1,57 +1,94 @@
 /* フルサイズ表示 */
-html, body {
-    width: 100%; height: 100%;
-    margin: 0; padding: 0;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
-#reversi { margin: 0; padding: 0; }
+
+#reversi {
+    margin: 0;
+    padding: 0;
+}
+
 #reversi canvas {
     position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: 0 auto;
 }
 
 /* タッチ時のハイライトやメニュー表示などを無効 */
 * {
-    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-touch-callout: none;
-    -webkit-user-select: none; 
+    -webkit-user-select: none;
     user-select: none;
 }
 
 /* 背景色 */
-body { background: #fff; }
+body {
+    background: #fff;
+}
+
 body {
     display: flex;
-    justify-content: flex-end; /* 内容を右に寄せる */
-    align-items: flex-start;   /* 縦の配置を上にする */
-    margin: 0;                 /* 余白を無くす */
-    height: 100vh;             /* ビューポートの高さを100%にする */
-    position: relative;        /* 子要素の絶対位置を基準にするため */
+    justify-content: flex-end;
+    /* 内容を右に寄せる */
+    align-items: flex-start;
+    /* 縦の配置を上にする */
+    margin: 0;
+    /* 余白を無くす */
+    height: 100vh;
+    /* ビューポートの高さを100%にする */
+    position: relative;
+    /* 子要素の絶対位置を基準にするため */
 }
-.question-area{
-    white-space: pre-line; /* 改行を反映するためのスタイル */
+
+.question-area {
+    white-space: pre-line;
+    /* 改行を反映するためのスタイル */
 }
-.Q_name{
+
+.Q_name {
     font-size: 35px;
 }
-.Q_main{
+
+.Q_main {
     font-size: 25px;
 }
-#sentakukaitou{
+
+#sentakukaitou {
     font-size: 20px;
+    
 }
+
 #quiz {
-    margin-right: 20px; /* 右側に余白を追加 */
-    position: relative; /* 基準位置を設定 */
-    z-index: 10;       /* 最前面に表示 */
+    margin-right: 20px;
+    /* 右側に余白を追加 */
+    position: relative;
+    /* 基準位置を設定 */
+    z-index: 10;
+    /* 最前面に表示 */
     width: 500px;
-    display:none;
-    background-color: rgba(255,255,255,0.6); /* 背景色を設定 (オプション) */
-    padding: 20px;     /* 内側の余白を設定 (オプション) */
-    border-radius: 5px; /* 角を丸くする (オプション) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 影を追加 (オプション) */
+    display: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* 背景色を設定 (オプション) */
+    padding: 20px;
+    /* 内側の余白を設定 (オプション) */
+    border-radius: 5px;
+    /* 角を丸くする (オプション) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* 影を追加 (オプション) */
     white-space: [pre-line];
+}
+.tatebota {
+    display: grid;
+    grid-template-rows: auto auto; /* 2つの行を作成 */
 }
 .button a {
     background: #f37d7d;
@@ -69,11 +106,14 @@ body {
     text-decoration: none;
     transition: 0.3s ease-in-out;
     font-weight: 150;
+    
 }
+
 .button a:hover {
     background: #333333;
     color: #FFF;
 }
+
 .button a:after {
     content: '';
     width: 5px;
@@ -87,14 +127,17 @@ body {
     border-radius: 1px;
     transition: 0.3s ease-in-out;
 }
+
 .button a:hover:after {
     border-color: #FFF;
 }
-body{
-    vertical-align:middle; 
+
+body {
+    vertical-align: middle;
     padding: 50px 0;
     text-align: center;
 }
+
 /* .nitaku{
     margin: 15px;
     border-radius: 50%;
@@ -107,7 +150,7 @@ body{
     text-decoration: none;
     text-align: center;
 } */
-.sentaku{
+/* .sentaku {
     margin: 15px;
     border-radius: 50%;
     display: flex;
@@ -117,26 +160,43 @@ body{
     color: #FFF;
     text-decoration: none;
     text-align: center;
-    
-}
+
+} */
+
 .nitaku,
 a.nitaku {
-  color: #fff;
-  background-color: #eb6100;
-}
-.nitaku:hover,
-a.nitaku:hover {
-  color: #fff;
-  background: #f56500;
-}
-.sentaku,
-a.sentaku {
-  color: #fff;
-  background-color: #eb6100;
-}
-.sentaku:hover,
-a.sentaku:hover {
-  color: #fff;
-  background: #f56500;
+    color: #fff;
+    background-color: #eb6100;
+    font-size: 15px;
+    margin-bottom: 15px;
+    width: 270px;
+    float: left;
 }
 
+.nitaku:hover,
+a.nitaku:hover {
+    color: #fff;
+    background: #f56500;
+    font-size: 15px;
+    margin-bottom: 15px;
+    float: left;
+
+}
+
+.sentaku,
+a.sentaku {
+    color: #fff;
+    background-color: #eb6100;
+    font-size: 15px;
+    margin-bottom: 15px;
+    float: left;
+}
+
+.sentaku:hover,
+a.sentaku:hover {
+    color: #fff;
+    background: #f56500;
+    font-size: 15px;
+    margin-bottom: 15px;
+    float: left;
+}

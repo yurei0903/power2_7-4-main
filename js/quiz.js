@@ -52,9 +52,9 @@ function loadQuestion(questionData) {
             questionArea.innerHTML +='<input type="text" id="kaitou" placeholder="ここに文字を入力" />'
         }
         else if(selectedQuestion.問題形式 === "二択"){
-
-            questionArea.innerHTML += '<button class="nitaku" data-id="１">1番'+selectedQuestion.選択肢+'</button>';
-            questionArea.innerHTML += '<button class="nitaku" data-id="２">2番'+selectedQuestion.選択肢+'</button>';
+            let nitakuadata=selectedQuestion.選択肢.split(" ");
+            questionArea.innerHTML += '<button class="nitaku" data-id="１">'+nitakuadata[0]+'</button>';
+            questionArea.innerHTML += '<button class="nitaku" data-id="２">'+nitakuadata[1]+'</button>';
             questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
             // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const nitaku = document.querySelectorAll(".nitaku");
@@ -63,9 +63,10 @@ function loadQuestion(questionData) {
             });
         }
         else if(selectedQuestion.問題形式 === "択一(文章)"){
-            questionArea.innerHTML += '<button class="sentaku" data-id="１">1番'+selectedQuestion.選択肢+'</button>';
-            questionArea.innerHTML += '<button class="sentaku" data-id="２">2番'+selectedQuestion.選択肢+'</button>';
-            questionArea.innerHTML += '<button class="sentaku" data-id="３">3番'+selectedQuestion.選択肢+'</button>';
+            let sentakuadata=selectedQuestion.選択肢.split(" ");
+            questionArea.innerHTML += '<button class="sentaku" data-id="１">'+sentakuadata[0]+'</button>';
+            questionArea.innerHTML += '<button class="sentaku" data-id="２">'+sentakuadata[1]+'</button>';
+            questionArea.innerHTML += '<button class="sentaku" data-id="３">'+sentakuadata[2]+'</button>';
             questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
             // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const sentaku = document.querySelectorAll(".sentaku");
