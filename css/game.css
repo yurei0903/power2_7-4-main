@@ -52,6 +52,7 @@ body {
 .question-area {
     white-space: pre-line;
     /* 改行を反映するためのスタイル */
+    display: grid;
 }
 
 .Q_name {
@@ -89,6 +90,9 @@ body {
 .tatebota {
     display: grid;
     grid-template-rows: auto auto; /* 2つの行を作成 */
+}
+.button{
+    grid-row-end: 5;
 }
 .button a {
     background: #f37d7d;
