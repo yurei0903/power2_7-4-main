@@ -33,7 +33,8 @@ appClick.addBoard =  async function () {
         const {board, player} = revCore.data;
         if (revMid.isActive(board, pos.x, pos.y, player)) {
             if(await quizdasu()){
-            console.log("quiz")
+            console.log(eX);
+            console.log(eY);
             this.isLock = false;     // ロック
             appProcess.put(pos.x, pos.y); // 石の配置
             skip=true;

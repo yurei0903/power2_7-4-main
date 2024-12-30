@@ -154,12 +154,12 @@ function checkAnswer(correctAnswer, format) {
         }
     }
     
-    const parent = document.getElementById('question-area');
+    const parent = document.getElementById('answer-area');
     while(parent.firstChild){
     parent.removeChild(parent.firstChild);
     }
     sentakukaitou=document.getElementById('sentakukaitou');
-    sentakukaitou.innerHTML=""
+    sentakukaitou.innerHTML="";
     nitaku="０";
     sentaku="０";
     lock=true;
