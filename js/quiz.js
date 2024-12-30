@@ -14,18 +14,16 @@ function nitakuFunction(event) {
 function sentakuFunction(event) {
     // クリックされたボタンのデータ属性からidを取得
     const buttonId = event.target.getAttribute('data-id');
-    console.log(buttonId);
     sentaku=buttonId;
     sentakukaitou.innerText="現在の解答は"+sentaku+"です";
 }
-async function quizdasu() {
+async function quizdasu(pos) {
     try {
-        console.log("quizdasu");
         if(lock){
         const response = await fetch('JSON/questions.json');
         const questionData = await response.json();
         // loadQuestionがPromiseを返すようにします
-        return await loadQuestion(questionData);
+        return await loadQuestion(questionData,pos);
         }
     } catch (error) {
         console.error('Error loading the question data:', error);
@@ -34,11 +32,11 @@ async function quizdasu() {
 }
 
 // 問題をロードする関数
-function loadQuestion(questionData) {
+function loadQuestion(questionData,pos) {
     return new Promise((resolve) => {
-        console.log("loadQuesution");
-        const randomIndex = Math.floor(Math.random() * questionData.length);
-        const selectedQuestion = questionData[randomIndex];
+        const Index = Math.floor(Math.random() * questionData.length);
+        const selectedQuestion = questionData[Index];
+
         console.log(selectedQuestion.答え)
         const questionArea = document.getElementById('question-area');
         const answerArea = document.getElementById('answer-area');
@@ -95,7 +93,6 @@ function loadQuestion(questionData) {
 
 // 答えを確認する関数
 function checkAnswer(correctAnswer, format) {
-    console.log("checkAnswer");
     const  seikai= document.getElementById('seikai');
     const  matigai= document.getElementById('matigai');
     if (format === "一問一答") {
@@ -119,7 +116,6 @@ function checkAnswer(correctAnswer, format) {
     } else if (format === "択一(文章)" ) {
         userAnswer = sentaku;
         // 択一の確認
-        console.log(userAnswer)
         if (userAnswer=== correctAnswer.charAt(0)) {
             seikai.currentTime = 0; // 音声の再生位置をリセット
             seikai.play(); // 音を再生
@@ -137,7 +133,6 @@ function checkAnswer(correctAnswer, format) {
     }
     else if (format === "二択" ) {
         userAnswer = nitaku;
-        console.log(userAnswer)
         // 択一の確認
         if (userAnswer=== correctAnswer.charAt(0)) {
             seikai.currentTime = 0; // 音声の再生位置をリセット
