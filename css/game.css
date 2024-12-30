@@ -180,7 +180,7 @@ a.nitaku {
     background-color: #eb6100;
     font-size: 15px;
     margin-bottom: 15px;
-    width: 270px;
+    width: auto;
     float: left;
     grid-auto-flow: row;
 }
