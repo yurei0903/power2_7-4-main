@@ -41,6 +41,7 @@ function loadQuestion(questionData) {
         const selectedQuestion = questionData[randomIndex];
         console.log(selectedQuestion.答え)
         const questionArea = document.getElementById('question-area');
+        const answerArea = document.getElementById('answer-area');
         questionArea.innerHTML = '<h3 class="Q_name">問題形式:' + selectedQuestion.問題形式 + '</h3>' +
                                 '<p class="Q_main">' + selectedQuestion.問題文 + '</p>';
         const quizElement = document.getElementById('quiz');
@@ -48,14 +49,14 @@ function loadQuestion(questionData) {
 
         if (selectedQuestion.問題形式 === "一問一答") {
             // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
-            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
-            questionArea.innerHTML +='<input type="text" id="kaitou" placeholder="ここに文字を入力" />'
+            answerArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
+            answerArea.innerHTML +='<input type="text" id="kaitou" placeholder="ここに文字を入力" />'
         }
         else if(selectedQuestion.問題形式 === "二択"){
             let nitakuadata=selectedQuestion.選択肢.split(" ");
-            questionArea.innerHTML += '<button class="nitaku" data-id="１">'+nitakuadata[0]+'</button>';
-            questionArea.innerHTML += '<button class="nitaku" data-id="２">'+nitakuadata[1]+'</button>';
-            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
+            answerArea.innerHTML += '<button class="nitaku" data-id="１">'+nitakuadata[0]+'</button>';
+            answerArea.innerHTML += '<button class="nitaku" data-id="２">'+nitakuadata[1]+'</button>';
+            answerArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
             // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const nitaku = document.querySelectorAll(".nitaku");
             nitaku.forEach(button => {
@@ -64,10 +65,10 @@ function loadQuestion(questionData) {
         }
         else if(selectedQuestion.問題形式 === "択一(文章)"){
             let sentakuadata=selectedQuestion.選択肢.split(" ");
-            questionArea.innerHTML += '<button class="sentaku" data-id="１">'+sentakuadata[0]+'</button>';
-            questionArea.innerHTML += '<button class="sentaku" data-id="２">'+sentakuadata[1]+'</button>';
-            questionArea.innerHTML += '<button class="sentaku" data-id="３">'+sentakuadata[2]+'</button>';
-            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
+            answerArea.innerHTML += '<button class="sentaku" data-id="１">'+sentakuadata[0]+'</button>';
+            answerArea.innerHTML += '<button class="sentaku" data-id="２">'+sentakuadata[1]+'</button>';
+            answerArea.innerHTML += '<button class="sentaku" data-id="３">'+sentakuadata[2]+'</button>';
+            answerArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
             // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const sentaku = document.querySelectorAll(".sentaku");
             sentaku.forEach(button => {

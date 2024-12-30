@@ -53,6 +53,7 @@ body {
     white-space: pre-line;
     /* 改行を反映するためのスタイル */
     display: grid;
+    
 }
 
 .Q_name {
@@ -69,6 +70,7 @@ body {
 }
 
 #quiz {
+    
     margin-right: 20px;
     /* 右側に余白を追加 */
     position: relative;
@@ -86,13 +88,15 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     /* 影を追加 (オプション) */
     white-space: [pre-line];
+    height: fit-content;
 }
 .tatebota {
     display: grid;
     grid-template-rows: auto auto; /* 2つの行を作成 */
 }
 .button{
-    grid-row-end: 5;
+    grid-row:auto;
+    grid-column: auto;
 }
 .button a {
     background: #f37d7d;
@@ -110,14 +114,17 @@ body {
     text-decoration: none;
     transition: 0.3s ease-in-out;
     font-weight: 150;
-    
+    grid-row: -1;
+    grid-column: 1;
 }
 
 .button a:hover {
     background: #333333;
     color: #FFF;
 }
-
+#answer-area{
+    display: grid;
+}
 .button a:after {
     content: '';
     width: 5px;
@@ -175,6 +182,7 @@ a.nitaku {
     margin-bottom: 15px;
     width: 270px;
     float: left;
+    grid-auto-flow: row;
 }
 
 .nitaku:hover,
@@ -184,6 +192,7 @@ a.nitaku:hover {
     font-size: 15px;
     margin-bottom: 15px;
     float: left;
+    grid-auto-flow: row;
 
 }
 
@@ -194,6 +203,7 @@ a.sentaku {
     font-size: 15px;
     margin-bottom: 15px;
     float: left;
+    grid-auto-flow: row;
 }
 
 .sentaku:hover,
@@ -203,4 +213,5 @@ a.sentaku:hover {
     font-size: 15px;
     margin-bottom: 15px;
     float: left;
+    grid-auto-flow: row;
 }
