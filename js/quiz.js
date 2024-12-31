@@ -36,7 +36,7 @@ function loadQuestion(questionData,pos) {
     var basho=[0,0];
     var Index="0";
     return new Promise((resolve) => {
-        for(i=0;i<1;i++){
+        for(i=0;i<1;i++){//場所がどのあたりか分かりやすい形にしてる
         switch(pos[i]){
         case 0:
         case 5:basho[i]=0;break;
@@ -46,7 +46,7 @@ function loadQuestion(questionData,pos) {
         case 3:basho[i]=2;break;
         }
     }
-    switch(pos[1]+pos[2]){
+    switch(pos[1]+pos[2]){//場所で難易度を調整してる
         case 0: Index="4";break;
         case 1: Index="3";break;
         case 2: Index="2";break;
@@ -68,7 +68,6 @@ function loadQuestion(questionData,pos) {
         quizElement.style.display = 'block'; // 要素を表示
 
         if (selectedQuestion.問題形式 === "一問一答") {
-            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             answerArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
             answerArea.innerHTML +='<input type="text" id="kaitou" placeholder="ここに文字を入力" />'
         }
@@ -77,7 +76,6 @@ function loadQuestion(questionData,pos) {
             answerArea.innerHTML += '<button class="nitaku" data-id="１">'+nitakuadata[0]+'</button>';
             answerArea.innerHTML += '<button class="nitaku" data-id="２">'+nitakuadata[1]+'</button>';
             answerArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
-            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const nitaku = document.querySelectorAll(".nitaku");
             nitaku.forEach(button => {
                 button.addEventListener('click', nitakuFunction);
@@ -89,7 +87,6 @@ function loadQuestion(questionData,pos) {
             answerArea.innerHTML += '<button class="sentaku" data-id="２">'+sentakuadata[1]+'</button>';
             answerArea.innerHTML += '<button class="sentaku" data-id="３">'+sentakuadata[2]+'</button>';
             answerArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
-            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const sentaku = document.querySelectorAll(".sentaku");
             sentaku.forEach(button => {
                 button.addEventListener('click', sentakuFunction);
