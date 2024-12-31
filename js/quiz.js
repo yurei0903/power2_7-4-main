@@ -33,10 +33,32 @@ async function quizdasu(pos) {
 
 // 問題をロードする関数
 function loadQuestion(questionData,pos) {
+    var basho=[0,0];
+    var Index="0";
     return new Promise((resolve) => {
-        const Index = Math.floor(Math.random() * questionData.length);
-        const selectedQuestion = questionData[Index];
-
+        for(i=0;i<1;i++){
+        switch(pos[i]){
+        case 0:
+        case 5:basho[i]=0;break;
+        case 1:
+        case 4:basho[i]=1;break;
+        case 2:
+        case 3:basho[i]=2;break;
+        }
+    }
+    switch(pos[1]+pos[2]){
+        case 0: Index="4";break;
+        case 1: Index="3";break;
+        case 2: Index="2";break;
+        case 3:
+        case 4: Index="1";break;
+        default:Index="1";break;
+        }
+        const selectionData=questionData.filter(item=> item.level == Index);
+        console.log(selectionData);
+        const randamIndex = Math.floor(Math.random() * selectionData.length);
+        const selectedQuestion = selectionData[randamIndex];
+        
         console.log(selectedQuestion.答え)
         const questionArea = document.getElementById('question-area');
         const answerArea = document.getElementById('answer-area');
