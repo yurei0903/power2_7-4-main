@@ -2,7 +2,18 @@ var hantei=true;
 var lock=true;
 var nitaku="０";
 var sentaku="０";
-const a=[["0","1","2"],["1","2","3"],[""]]
+var nanidohosei=0
+window.onload = function() {
+    // 実行したい処理
+    const nd = localStorage.getItem('nanidodata');
+    switch(nd){
+        case "0" :nanidohosei=0;break;
+        case "1" :nanidohosei=1;break;
+        case"2":nanidohosei=2;break;
+        default:nanidohosei=0;break;
+    }
+
+}
 function nitakuFunction(event) {
     const sentakukaitou=document.getElementById('sentakukaitou');
     // クリックされたボタンのデータ属性からidを取得
@@ -58,13 +69,14 @@ function loadQuestion(questionData,pos) {
             }
     
     switch(basho[1]+basho[0]){//場所で難易度を調整してる
-        case 0: Index="2";break;
+        case 0: Index=2;break;
         case 1: 
-        case 2: Index="1";break;
+        case 2: Index=1;break;
         case 3:
-        case 4: Index="0";break;
-        default:Index="0";break;
+        case 4: Index=0;break;
+        default:Index=0;break;
         }
+        Index+=nanidohosei
         const selectionData=questionData.filter(item=> item.level == Index);
         console.log(selectionData);
         const randamIndex = Math.floor(Math.random() * selectionData.length);

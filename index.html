@@ -19,6 +19,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+        
       </head>
 
     <body>
@@ -58,11 +59,12 @@
       <div id="settingScene" style="display: none;">
         <img src="./images/title.png" style="width: 70%;">
         <h2>設定</h2>
-        <button id="back_titleSceneButton">タイトルに戻る</button>
-        <button id="back_titleSceneButton1">難易度設定</button><br>
-        <button id="back_titleSceneButton2">やさしい</button>
-        <button id="back_titleSceneButton3">普通</button>
-        <button id="back_titleSceneButton4">難しい</button>
+        <button class="lv_btn" id="back_titleSceneButton">タイトルに戻る</button>
+        <button class="lv_btn" id="back_titleSceneButton1">難易度設定</button><br>
+        <button data-lv="0" id="easy" class="lv_btn">やさしい</button>
+        <button data-lv=1 class="lv_btn" id="normal">普通</button>
+        <button data-lv=2 class="lv_btn" id="hard">難しい</button>
+        <div id="kokuti"></div>
 
         
 <h3>音量</h3>
@@ -88,5 +90,6 @@
         </div>
         <script src="js/script.js"></script>
       </div>
+      <script src="js\nanid.js"></script>
     </body>
 </html>
