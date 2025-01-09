@@ -12,6 +12,7 @@ window.onload = function() {
         case"2":nanidohosei=2;break;
         default:nanidohosei=0;break;
     }
+    localStorage.clear();
 
 }
 function nitakuFunction(event) {

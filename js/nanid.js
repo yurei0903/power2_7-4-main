@@ -6,7 +6,7 @@ for(i=0;i<btn_lv.length;i++){
         lvb.addEventListener("click",function (e) {
             var data = e.currentTarget.dataset['lv'];
             var simesu = document.getElementById("kokuti");
-            simesu.innerHTML = '<div>今の難易度は「' + hyokinanido[data] + '」です;</div>'
+            simesu.innerHTML = '<div>今の難易度は「' + hyokinanido[data] + '」です</div>'
             localStorage.setItem('nanidodata', data);
         });
 }
