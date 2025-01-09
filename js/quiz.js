@@ -58,12 +58,12 @@ function loadQuestion(questionData,pos) {
             }
     
     switch(basho[1]+basho[0]){//場所で難易度を調整してる
-        case 0: Index="3";break;
+        case 0: Index="2";break;
         case 1: 
-        case 2: Index="2";break;
+        case 2: Index="1";break;
         case 3:
-        case 4: Index="1";break;
-        default:Index="1";break;
+        case 4: Index="0";break;
+        default:Index="0";break;
         }
         const selectionData=questionData.filter(item=> item.level == Index);
         console.log(selectionData);
