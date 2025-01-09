@@ -29,9 +29,6 @@ appClick.addBoard =  async function () {
         // 石置き可能なら、石を置く
         if (skip){
             skip=false;
-            console.log(eX);
-            console.log(eY);
-            console.log(pos);
         const {board, player} = revCore.data;
         if (revMid.isActive(board, pos.x, pos.y, player)) {
             if(await quizdasu(pos)){

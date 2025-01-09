@@ -2,6 +2,7 @@ var hantei=true;
 var lock=true;
 var nitaku="０";
 var sentaku="０";
+const a=["0","1","2","3","4"]
 function nitakuFunction(event) {
     const sentakukaitou=document.getElementById('sentakukaitou');
     // クリックされたボタンのデータ属性からidを取得
@@ -33,22 +34,32 @@ async function quizdasu(pos) {
 
 // 問題をロードする関数
 function loadQuestion(questionData,pos) {
+    
     var basho=[0,0];
     var Index="0";
+    console.log(pos)
     return new Promise((resolve) => {
-        for(i=0;i<1;i++){//場所がどのあたりか分かりやすい形にしてる
-        switch(pos[i]){
+        switch(pos.x){
         case 0:
-        case 5:basho[i]=0;break;
+        case 5:basho[0]=0;break;
         case 1:
-        case 4:basho[i]=1;break;
+        case 4:basho[0]=1;break;
         case 2:
-        case 3:basho[i]=2;break;
+        case 3:basho[0]=2;break;
         }
-    }
-    switch(pos[1]+pos[2]){//場所で難易度を調整してる
-        case 0: Index="4";break;
-        case 1: Index="3";break;
+        switch(pos.y){
+            case 0:
+            case 5:basho[1]=0;break;
+            case 1:
+            case 4:basho[1]=1;break;
+            case 2:
+            case 3:basho[1]=2;break;
+            default:basho[1]=2
+            }
+    
+    switch(basho[1]+basho[0]){//場所で難易度を調整してる
+        case 0: Index="3";break;
+        case 1: 
         case 2: Index="2";break;
         case 3:
         case 4: Index="1";break;
