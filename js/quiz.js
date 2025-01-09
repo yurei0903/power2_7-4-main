@@ -2,7 +2,7 @@ var hantei=true;
 var lock=true;
 var nitaku="０";
 var sentaku="０";
-const a=["0","1","2","3","4"]
+const a=[["0","1","2"],["1","2","3"],[""]]
 function nitakuFunction(event) {
     const sentakukaitou=document.getElementById('sentakukaitou');
     // クリックされたボタンのデータ属性からidを取得
