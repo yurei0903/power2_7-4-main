@@ -78,11 +78,7 @@ function loadQuestion(questionData,pos) {
         const quizElement = document.getElementById('quiz');
         quizElement.style.display = 'block'; // 要素を表示
 
-        if (selectedQuestion.問題形式 === "一問一答") {
-            answerArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
-            answerArea.innerHTML +='<input type="text" id="kaitou" placeholder="ここに文字を入力" />'
-        }
-        else if(selectedQuestion.問題形式 === "二択"){
+        if(selectedQuestion.問題形式 === "二択"){
             let nitakuadata=selectedQuestion.選択肢.split(" ");
             answerArea.innerHTML += '<button class="nitaku" data-id="１">'+nitakuadata[0]+'</button>';
             answerArea.innerHTML += '<button class="nitaku" data-id="２">'+nitakuadata[1]+'</button>';
@@ -92,7 +88,7 @@ function loadQuestion(questionData,pos) {
                 button.addEventListener('click', nitakuFunction);
             });
         }
-        else if(selectedQuestion.問題形式 === "択一(文章)"){
+        else if(selectedQuestion.問題形式 === "三択"){
             let sentakuadata=selectedQuestion.選択肢.split(" ");
             answerArea.innerHTML += '<button class="sentaku" data-id="１">'+sentakuadata[0]+'</button>';
             answerArea.innerHTML += '<button class="sentaku" data-id="２">'+sentakuadata[1]+'</button>';
