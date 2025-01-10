@@ -51,8 +51,8 @@ function loadQuestion(questionData,pos) {
     var Index="0";
     console.log(pos)
     return new Promise((resolve) => {
-        if(pos.x==5||pos.x==0){
-            if(pos.y==5||pos.y==0){
+        if(pos.x==5||pos.x==0||pos.y==5||pos.y==0){
+            if((pos.x==5||pos.x==0)&&(pos.y==5||pos.y==0)){
                 Index=2;
             }
             else{
