@@ -111,7 +111,7 @@ body {
         /* 影を追加 (オプション) */
         white-space: [pre-line];
         height: fit-content;
-        margin-bottom: 25px;
+        margin-bottom: 12px;
     }
     .Q_name {
         font-size: 25px;
