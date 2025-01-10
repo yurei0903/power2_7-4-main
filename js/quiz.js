@@ -71,8 +71,7 @@ function loadQuestion(questionData,pos) {
         console.log(selectedQuestion.答え)
         const questionArea = document.getElementById('question-area');
         const answerArea = document.getElementById('answer-area');
-        questionArea.innerHTML = '<h3 class="Q_name">問題形式:' + selectedQuestion.問題形式 + '</h3>' +
-                                '<p class="Q_main">' + selectedQuestion.問題文 + '</p>';
+        questionArea.innerHTML = "<h3 class='Q_name'>問題</h3><p class='Q_main'>" + selectedQuestion.問題文 + "</p>";
         const quizElement = document.getElementById('quiz');
         quizElement.style.display = 'block'; // 要素を表示
 
