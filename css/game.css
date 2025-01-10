@@ -113,15 +113,15 @@ body {
         height: fit-content;
     }
     .Q_name {
-        font-size: 20px;
+        font-size: 25px;
     }
     
     .Q_main {
-        font-size: 15px;
+        font-size: 20px;
     }
     
     #sentakukaitou {
-        font-size: 10px;
+        font-size: 20px;
         
     }
 }
