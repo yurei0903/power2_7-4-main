@@ -93,14 +93,13 @@ body {
 
 @media screen and (max-width: 500px) {
 	#quiz {
-        margin-right: 20px;
         /* 右側に余白を追加 */
         position: fixed;
         bottom: 0;
         /* 基準位置を設定 */
         z-index: 10;
         /* 最前面に表示 */
-        width: 500px;
+        width: 300px;
         display: none;
         background-color: rgba(255, 255, 255, 0.6);
         /* 背景色を設定 (オプション) */
@@ -112,6 +111,18 @@ body {
         /* 影を追加 (オプション) */
         white-space: [pre-line];
         height: fit-content;
+    }
+    .Q_name {
+        font-size: 20px;
+    }
+    
+    .Q_main {
+        font-size: 15px;
+    }
+    
+    #sentakukaitou {
+        font-size: 10px;
+        
     }
 }
 
