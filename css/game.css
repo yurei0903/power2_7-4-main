@@ -111,7 +111,7 @@ body {
         /* 影を追加 (オプション) */
         white-space: [pre-line];
         height: fit-content;
-        margin-bottom: 17px;
+        margin-bottom: 25px;
     }
     .Q_name {
         font-size: 25px;
@@ -122,7 +122,7 @@ body {
     }
     
     #sentakukaitou {
-        font-size: 20px;
+        font-size: 15px;
         
     }
 }
