@@ -68,7 +68,6 @@ body {
     font-size: 20px;
     
 }
-
 #quiz {
     
     margin-right: 20px;
@@ -90,6 +89,31 @@ body {
     white-space: [pre-line];
     height: fit-content;
 }
+@media (min-width: 768px) { 
+#quiz {
+    
+    margin-right: 20px;
+    /* 右側に余白を追加 */
+    position: fixed;
+    bottom: 0;
+    /* 基準位置を設定 */
+    z-index: 10;
+    /* 最前面に表示 */
+    width: 500px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* 背景色を設定 (オプション) */
+    padding: 20px;
+    /* 内側の余白を設定 (オプション) */
+    border-radius: 5px;
+    /* 角を丸くする (オプション) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* 影を追加 (オプション) */
+    white-space: [pre-line];
+    height: fit-content;
+}
+}
+
 .tatebota {
     display: grid;
     grid-template-rows: auto auto; /* 2つの行を作成 */
