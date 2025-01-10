@@ -89,7 +89,7 @@ body {
     white-space: [pre-line];
     height: fit-content;
 }
-@media (min-width: 768px) { 
+@media (min-width: 480px) { 
 #quiz {
     
     margin-right: 20px;
